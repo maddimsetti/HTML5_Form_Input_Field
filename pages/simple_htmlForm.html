@@ -58,8 +58,9 @@
         <div>
             <button>Submit</button>
         </div>
-    </form>
-    <script>
+    </form> 
+    <script> 
+        //Validating the FirstName
         const text = document.querySelector('#text');
         const textError = document.querySelector('.text-error');
         text.addEventListener('input',function() {
@@ -68,6 +69,18 @@
                 textError.textContent = "";
             } else {
                 textError.textContent = "Name is Incorrect";
+            }
+        });
+
+        //Validating the Email Address
+        const email = document.querySelector('#email');
+        const emailError = document.querySelector('.email-error');
+        email.addEventListener('input',function() {
+            let emailRegex = RegExp('^[a-z0-9]+(([.+-_][a-z0-9])?)+(@[a-z0-9]{1})+(.[a-z]{3,4})+((.[a-z]{2})?)$');
+            if (emailRegex.test(email.value)) {
+                emailError.textContent = "";
+            } else {
+                emailError.textContent = "EmailId is Incorrect";
             }
         });
 
